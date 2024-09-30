@@ -1,5 +1,5 @@
 resource "aws_s3_bucket" "bucket" {
-  bucket_prefix = "pedro-test-terraform-${var.environment}"
+  bucket_prefix = "enrique-test-terraform-${var.environment}"
 }
 
 resource "aws_s3_bucket_server_side_encryption_configuration" "bucket_sse" {
@@ -8,7 +8,7 @@ resource "aws_s3_bucket_server_side_encryption_configuration" "bucket_sse" {
   rule {
     apply_server_side_encryption_by_default {
       sse_algorithm = var.environment == "prod" ? "aws:kms" : "AES256"
-      kms_master_key_id = var.environment == "prod" ? module.pedro_key[0].key_id : null
+      kms_master_key_id = var.environment == "prod" ? module.enrique_key[0].key_id : null
     }
   }
 }
