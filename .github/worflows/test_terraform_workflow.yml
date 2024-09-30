@@ -59,7 +59,7 @@ jobs:
         run: |
           terraform apply -var-file $tf_vars_file -auto-approve
       
-      - name: terraform_tests
+      - name: terraform_tests2
         run: |
           terraform test -var-file $tf_vars_file -auto-approve
 
